@@ -19,3 +19,6 @@ require __DIR__ . '/../thinkphp/base.php';
 
 // 执行应用并响应
 Container::get('app')->run()->send();
+error_reporting(E_ALL);
+
+ini_set('display_errors', '1');
