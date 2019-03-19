@@ -98,8 +98,8 @@ class DeviceInfo extends BaseModel
                 $deviceInfoByID->save(['version_id' => $versionID], ['device_id' => $deviceID]);
                 $deviceStatusInfoByID = (new DeviceStatus)->where('device_id','=',$deviceID)->find();
                 $deviceStatusInfoByID->save(['msgId' => $msgId], ['device_id' => $deviceID]);
-                $deviceStatusInfoByID->save(['manufacturer_id' => $manufacturerID], ['device_id' => $deviceID]);
-                $deviceStatusInfoByID->save(['device_mac' => $deviceMAC], ['device_id' => $deviceID]);
+                $deviceStatusInfoByID->save(['vendor_id' => $manufacturerID], ['device_id' => $deviceID]);
+                $deviceStatusInfoByID->save(['mac_id' => $deviceMAC], ['device_id' => $deviceID]);
                 $deviceStatusInfoByID->save(['device_addr' => $deviceAddr], ['device_id' => $deviceID]);
                 return $deviceInfoByID;
             }else{

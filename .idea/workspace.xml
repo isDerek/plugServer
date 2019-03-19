@@ -40,12 +40,12 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="gitignore" value="1" />
-          <entry key="php" value="949" />
+          <entry key="php" value="968" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PHP" value="949" />
+          <entry key="PHP" value="968" />
           <entry key="PLAIN_TEXT" value="1" />
         </counts>
       </usages-collector>
@@ -299,12 +299,12 @@
       <workItem from="1552878132685" duration="279000" />
       <workItem from="1552972732299" duration="4508000" />
       <workItem from="1552991057411" duration="40000" />
-      <workItem from="1553001332107" duration="3864000" />
+      <workItem from="1553001332107" duration="4102000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17775000" />
+    <option name="totallyTimeSpent" value="18013000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="63" y="52" width="1377" height="808" extended-state="0" />
