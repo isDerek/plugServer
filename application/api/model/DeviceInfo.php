@@ -80,20 +80,21 @@ class DeviceInfo extends BaseModel
     // 更新注册设备信息
     public function putDeviceInfo(){
         $request = new Request;
-        $params = $request->only(['msgId','deviceID','deviceMAC','versionID','manufacturerID']);
+        $params = $request->only(['msgId','deviceID','deviceMAC','versionID','manufacturerID','deviceAddr']);
         $msgId = $params['msgId'];
         $deviceID = $params['deviceID'];
         $deviceMAC = $params['deviceMAC'];
         $manufacturerID = $params['manufacturerID'];
         $versionID = $params['versionID'];
+        $deviceAddr = $params['deviceAddr'];
         $deviceInfoByID = (new self)->where('device_id','=',$deviceID)->find();
         if($deviceInfoByID){
-            $orderID = DeviceInfo::hasWhere('manufacturerInfo',['order_id'=>$manufacturerID])
-                ->find();
+            $orderID = (new ManufacturerInfo)->where('order_id','=',$manufacturerID)->find();
             if($orderID) {
                 $deviceInfoByID->save(['msgId' => $msgId], ['device_id' => $deviceID]);
                 $deviceInfoByID->save(['manufacturer_id' => $manufacturerID], ['device_id' => $deviceID]);
                 $deviceInfoByID->save(['device_mac' => $deviceMAC], ['device_id' => $deviceID]);
+                $deviceInfoByID->save(['device_addr' => $deviceAddr], ['device_id' => $deviceID]);
                 $deviceInfoByID->save(['version_id' => $versionID], ['device_id' => $deviceID]);
                 return $deviceInfoByID;
             }else{
