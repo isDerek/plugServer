@@ -23,23 +23,28 @@ class DeviceInfo extends BaseModel
     // 注册设备信息
     public function postDeviceInfo(){
         $request = new Request;
-        $params = $request->only(['msgId','deviceID','manufacturerID','deviceMAC','versionID']);
+        $params = $request->only(['msgId','deviceID','manufacturerID','deviceMAC','versionID','deviceAddr']);
         $msgId = $params['msgId'];
         $deviceID = $params['deviceID'];
         $manufacturerID = $params['manufacturerID'];
         $deviceMAC = $params['deviceMAC'];
         $versionID = $params['versionID'];
+        $deviceAddr = $params['deviceAddr'];
+
         $deviceInfoByDID = (new self)->where('device_id','=',$deviceID)
             ->find();
+
         // 如果设备 ID 未被注册，则允许注册设备
         if(!$deviceInfoByDID){
             $orderID = (new ManufacturerInfo)->where('order_id','=',$manufacturerID)->find();
+
             if($orderID) {
                 $deviceInfo = (new self)->data([
                     'device_id' => $deviceID,
                     'device_mac' => $deviceMAC,
                     'version_id' => $versionID,
                     'manufacturer_id' => $manufacturerID,
+                    'device_addr' => $deviceAddr,
                     'msgId' => $msgId
                 ]);
                 $deviceInfo->save();
@@ -48,6 +53,7 @@ class DeviceInfo extends BaseModel
                     'device_id' => $deviceID,
                     'mac_id' => $deviceMAC,
                     'vendor_id' => $manufacturerID,
+                    'device_addr' => $deviceAddr,
                     'msgId' => $msgId
                 ])->save();
                 return $deviceInfo;

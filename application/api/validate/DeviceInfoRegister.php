@@ -16,6 +16,7 @@ class DeviceInfoRegister extends BaseValidate
         'deviceID' => 'require|number',
         'versionID' => 'require|number',
         'manufacturerID' => 'require|number',
-        'deviceMAC' => 'require'
+        'deviceMAC' => 'require',
+        'deviceAddr' => 'require'
     ];
 }
