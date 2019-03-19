@@ -20,9 +20,6 @@ class DeviceInfo extends BaseModel
     protected $autoWriteTimestamp = true;
     use concern\SoftDelete;
 
-    public function manufacturerInfo(){
-        return $this->hasOne('manufacturerInfo','order_id','manufacturer_id');
-    }
     // 注册设备信息
     public function postDeviceInfo(){
         $request = new Request;
@@ -36,8 +33,7 @@ class DeviceInfo extends BaseModel
             ->find();
         // 如果设备 ID 未被注册，则允许注册设备
         if(!$deviceInfoByDID){
-            $orderID = DeviceInfo::hasWhere('manufacturerInfo',['order_id'=>$manufacturerID])
-                ->find();
+            $orderID = (new ManufacturerInfo)->where('order_id','=',$manufacturerID)->find();
             if($orderID) {
                 $deviceInfo = (new self)->data([
                     'device_id' => $deviceID,
@@ -47,6 +43,13 @@ class DeviceInfo extends BaseModel
                     'msgId' => $msgId
                 ]);
                 $deviceInfo->save();
+                // 将必要信息保存到设备状态数据库
+                (new DeviceStatus)->data([
+                    'device_id' => $deviceID,
+                    'mac_id' => $deviceMAC,
+                    'vendor_id' => $manufacturerID,
+                    'msgId' => $msgId
+                ])->save();
                 return $deviceInfo;
             }else{
                 throw new ManufacturerExistException(['msg'=>'厂商 ID 不存在']);

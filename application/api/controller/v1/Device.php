@@ -8,10 +8,12 @@
 
 namespace app\api\controller\v1;
 
+use app\api\model\DeviceStatus;
 use app\api\validate\AllDeviceRegisterInfo;
 use app\api\validate\AllDeviceStatusInfo;
 use app\api\validate\DeviceInfoRegister;
 use app\api\model\DeviceInfo as DeviceInfoModel;
+use app\api\model\DeviceStatus as DeviceStatusModel;
 use app\api\validate\DeviceRegisterDelete;
 use app\api\validate\DeviceRegisterFilter;
 use app\api\validate\DeviceRegisterUpdate;
@@ -54,6 +56,7 @@ class Device
     // 获取设备状态页面所有设备信息
     public function getAllDeviceStatusInfo(){
         (new AllDeviceStatusInfo())->goCheck();
-
+        $device = (new DeviceStatus())->getAllDeviceStatusInfo();
+        return $device;
     }
 }
