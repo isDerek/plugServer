@@ -19,6 +19,7 @@ class BaseValidate extends Validate
         // 获取 http 传入的参数
         // 对这些参数做校验
         $params = input('');
+        return $params;
         // this 指的是 validate ，因为继承在 validate 里面
         $result = $this->batch()->check($params);
         if (!$result) {
