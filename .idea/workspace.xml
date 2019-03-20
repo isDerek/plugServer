@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1efeae32-5814-4f8a-8f50-4ee8af23c1dd" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/application/api/model/DeviceStatus.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/api/model/DeviceStatus.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/api/validate/DeviceStatusInfoUpdate.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/api/validate/DeviceStatusInfoUpdate.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -41,12 +40,12 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="gitignore" value="1" />
-          <entry key="php" value="1595" />
+          <entry key="php" value="1596" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PHP" value="1595" />
+          <entry key="PHP" value="1596" />
           <entry key="PLAIN_TEXT" value="1" />
         </counts>
       </usages-collector>
@@ -68,16 +67,16 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/api/validate/DeviceStatusInfoUpdate.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="16" column="32" lean-forward="true" selection-start-line="16" selection-start-column="32" selection-end-line="16" selection-end-column="32" />
+            <state relative-caret-position="180">
+              <caret line="17" column="38" lean-forward="true" selection-start-line="17" selection-start-column="38" selection-end-line="17" selection-end-column="38" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/api/model/DeviceStatus.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="148">
@@ -111,8 +110,8 @@
         <option value="$PROJECT_DIR$/route/route.php" />
         <option value="$PROJECT_DIR$/application/api/model/DeviceInfo.php" />
         <option value="$PROJECT_DIR$/application/api/controller/v1/Device.php" />
-        <option value="$PROJECT_DIR$/application/api/validate/DeviceStatusInfoUpdate.php" />
         <option value="$PROJECT_DIR$/application/api/model/DeviceStatus.php" />
+        <option value="$PROJECT_DIR$/application/api/validate/DeviceStatusInfoUpdate.php" />
       </list>
     </option>
   </component>
@@ -130,7 +129,7 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="137" />
-    <option name="y" value="81" />
+    <option name="y" value="138" />
     <option name="width" value="1377" />
     <option name="height" value="808" />
   </component>
@@ -229,15 +228,15 @@
       <workItem from="1552972732299" duration="4508000" />
       <workItem from="1552991057411" duration="40000" />
       <workItem from="1553001332107" duration="4781000" />
-      <workItem from="1553049464771" duration="2910000" />
+      <workItem from="1553049464771" duration="3212000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21602000" />
+    <option name="totallyTimeSpent" value="21904000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="137" y="81" width="1377" height="808" extended-state="0" />
+    <frame x="137" y="138" width="1377" height="808" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28689137" />
@@ -495,17 +494,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/api/validate/DeviceStatusInfoUpdate.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="16" column="32" lean-forward="true" selection-start-line="16" selection-start-column="32" selection-end-line="16" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/api/model/DeviceStatus.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="148">
           <caret line="40" column="36" lean-forward="true" selection-start-line="40" selection-start-column="36" selection-end-line="40" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/api/validate/DeviceStatusInfoUpdate.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="17" column="38" lean-forward="true" selection-start-line="17" selection-start-column="38" selection-end-line="17" selection-end-column="38" />
         </state>
       </provider>
     </entry>
