@@ -54,7 +54,8 @@ class DeviceInfo extends BaseModel
                     'mac_id' => $deviceMAC,
                     'vendor_id' => $manufacturerID,
                     'device_addr' => $deviceAddr,
-                    'msgId' => $msgId
+                    'msgId' => $msgId,
+                    'status' => '离线'
                 ])->save();
                 return $deviceInfo;
             }else{
