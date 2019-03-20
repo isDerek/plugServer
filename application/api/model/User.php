@@ -16,11 +16,9 @@ class user extends BaseModel
     protected $autoWriteTimestamp = true;
     // 获取用户登陆
     public function getUserLogin(){
-        $request = new Request;
-        $params = $request->only(['username','password','msgId']);
-        $username = $params['username'];
-        $password = $params['password'];
-        $msgId = $params['msgId'];
+        $username = input('username');
+        $password = input('password');
+        $msgId = input('msgId');
         $user = (new self)->where('username','=',$username)->where('password','=',$password)->find();
         $user->save(['msgId'=>$msgId],['username'=> $username]);
         $user->save(['status'=>1],['username'=>$username]);

@@ -16,11 +16,14 @@ use app\lib\exception\UserMissExcepiton;
 use app\api\validate\UserLogin;
 use app\api\model\User as UserModel;
 use app\api\validate\UserLogout;
+use think\Request;
 
 class User
 {
     // 用户登陆查询是否匹配
     public function getUserLogin(){
+//        $a = input();
+//       return array($a);
       (new UserLogin())->goCheck();
       $user = (new UserModel())->getUserLogin();
       if(!$user){
