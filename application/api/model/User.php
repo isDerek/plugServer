@@ -46,14 +46,20 @@ class user extends BaseModel
     }
     // 注册用户
     public function postUserInfo(){
-        $request = new Request;
-        $params = $request->only(['username','password','phone','email','confirmPassword','msgId']);
-        $username = $params['username'];
-        $password = $params['password'];
-        $email = $params['email'];
-        $phone = $params['phone'];
-        $msgId = $params['msgId'];
-        $confirmPassword = $params['confirmPassword'];
+//        $request = new Request;
+//        $params = $request->only(['username','password','phone','email','confirmPassword','msgId']);
+//        $username = $params['username'];
+//        $password = $params['password'];
+//        $email = $params['email'];
+//        $phone = $params['phone'];
+//        $msgId = $params['msgId'];
+//        $confirmPassword = $params['confirmPassword'];
+        $username = input('username');
+        $password = input('password');
+        $email = input('email');
+        $phone = input('phone');
+        $msgId = input('msgId');
+        $confirmPassword = input('confirmPassword');
         $user = (new self)->data([
             'username' => $username,
             'password' => $password,
