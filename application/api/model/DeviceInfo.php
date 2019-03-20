@@ -132,10 +132,12 @@ class DeviceInfo extends BaseModel
         $msgId = $params['msgId'];
         $deviceID = $params['deviceID'];
         $deviceRegisterByID = (new self)->where('device_id','=',$deviceID)->find();
-        if(!$deviceRegisterByID){
+        $deviceStatusByID = (new DeviceStatus())->where('device_id','=',$deviceID)->find();
+        if(!$deviceRegisterByID&&!$deviceStatusByID){
             throw new DeviceRegisterDeleteException();
         }
         $deviceRegisterByID->delete();
+        $deviceStatusByID->delete();
         return $msgId;
     }
 
