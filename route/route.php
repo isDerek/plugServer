@@ -34,4 +34,5 @@ Route::get('api/:version/postDeviceRegisterInfo','api/:version.device/postDevice
 Route::get('api/:version/putDeviceRegisterInfo','api/:version.device/putDeviceRegisterInfo');
 Route::get('api/:version/getFilterDeviceRegisterInfo','api/:version.device/getFilterDeviceRegisterInfo');
 Route::get('api/:version/deleteDeviceRegisterInfo','api/:version.device/deleteDeviceRegisterInfo');
+Route::get('api/:version/putDeviceStatusInfo','api/:version.device/putDeviceStatusInfo');
 Route::get('api/:version/getAllDeviceStatusInfo','api/:version.device/getAllDeviceStatusInfo');

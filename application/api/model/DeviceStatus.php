@@ -16,10 +16,7 @@ class DeviceStatus extends BaseModel
 {
     protected $autoWriteTimestamp = true;
     use SoftDelete;
-    // 创建设备状态，根据注册设备信息进行创建
-    public function postDeviceStatusInfo(){
 
-    }
     // 获取所有设备状态
     public function getAllDeviceStatusInfo(){
         $request = new Request;
@@ -33,5 +30,27 @@ class DeviceStatus extends BaseModel
             $data->save(['msgId'=>$msgId]);
         }
         return $allDeviceStatusInfo;
+    }
+    // 更新设备状态
+    public function putDeviceStatusInfo(){
+        $request = new Request;
+        $params = $request->only(['msgId','timeRun','timeStart','timeStop','status','deviceID']);
+        $msgId = $params['msgId'];
+        $timeRun = $params['timeRun'];
+        $timeStart = $params['timeStart'];
+        $timeStop = $params['timeStop'];
+        $status = $params['status'];
+        $deviceID = $params['deviceID'];
+        $deviceStatusInfoByID = (new self)->where('device_id','=',$deviceID)->find();
+        if($deviceStatusInfoByID){
+                $deviceStatusInfoByID->save(['msgId' => $msgId], ['device_id' => $deviceID]);
+                $deviceStatusInfoByID->save(['time_start' => $timeStart], ['device_id' => $deviceID]);
+                $deviceStatusInfoByID->save(['time_run' => $timeRun], ['device_id' => $deviceID]);
+                $deviceStatusInfoByID->save(['time_stop' => $timeStop], ['device_id' => $deviceID]);
+                $deviceStatusInfoByID->save(['status' => $status], ['device_id' => $deviceID]);
+                return $deviceStatusInfoByID;
+        }
+        throw new DeviceExistException(['msg'=>'设备编号不存在']);
+
     }
 }

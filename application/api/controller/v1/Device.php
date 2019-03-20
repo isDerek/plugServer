@@ -17,6 +17,7 @@ use app\api\model\DeviceStatus as DeviceStatusModel;
 use app\api\validate\DeviceRegisterDelete;
 use app\api\validate\DeviceRegisterFilter;
 use app\api\validate\DeviceRegisterUpdate;
+use app\api\validate\DeviceStatusInfoUpdate;
 
 class Device
 {
@@ -57,6 +58,12 @@ class Device
     public function getAllDeviceStatusInfo(){
         (new AllDeviceStatusInfo())->goCheck();
         $device = (new DeviceStatus())->getAllDeviceStatusInfo();
+        return $device;
+    }
+    // 更新设备状态信息
+    public function putDeviceStatusInfo(){
+        (new DeviceStatusInfoUpdate())->goCheck();
+        $device = (new DeviceStatus())->putDeviceStatusInfo();
         return $device;
     }
 }
