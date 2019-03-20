@@ -13,7 +13,6 @@ class DeviceStatusInfoUpdate extends BaseValidate
 {
     protected $rule = [
         'status' => 'require',
-        'timeRun' => 'require',
         'timeStart' => 'require',
         'timeStop' => 'require',
         'msgId' => 'require',

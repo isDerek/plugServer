@@ -34,9 +34,8 @@ class DeviceStatus extends BaseModel
     // 更新设备状态
     public function putDeviceStatusInfo(){
         $request = new Request;
-        $params = $request->only(['msgId','timeRun','timeStart','timeStop','status','deviceID']);
+        $params = $request->only(['msgId','timeStart','timeStop','status','deviceID']);
         $msgId = $params['msgId'];
-        $timeRun = $params['timeRun'];
         $timeStart = $params['timeStart'];
         $timeStop = $params['timeStop'];
         $status = $params['status'];
@@ -45,7 +44,6 @@ class DeviceStatus extends BaseModel
         if($deviceStatusInfoByID){
                 $deviceStatusInfoByID->save(['msgId' => $msgId], ['device_id' => $deviceID]);
                 $deviceStatusInfoByID->save(['time_start' => $timeStart], ['device_id' => $deviceID]);
-                $deviceStatusInfoByID->save(['time_run' => $timeRun], ['device_id' => $deviceID]);
                 $deviceStatusInfoByID->save(['time_stop' => $timeStop], ['device_id' => $deviceID]);
                 $deviceStatusInfoByID->save(['status' => $status], ['device_id' => $deviceID]);
                 return $deviceStatusInfoByID;
