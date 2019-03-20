@@ -20,9 +20,9 @@
 //];
 
 
-Route::get('api/:version/getUserLogin','api/:version.user/getUserLogin');
+Route::post('api/:version/getUserLogin','api/:version.user/getUserLogin');
 Route::get('api/:version/putUserLogout','api/:version.user/putUserLogout');
-Route::get('api/:version/postUserInfo','api/:version.user/postUserInfo');
+Route::post('api/:version/postUserInfo','api/:version.user/postUserInfo');
 Route::get('api/:version/getUsername','api/:version.user/getUsername');
 Route::get('api/:version/postManufacturerInfo','api/:version.manufacturer/postManufacturerInfo');
 Route::get('api/:version/getAllManufacturerInfo','api/:version.manufacturer/getAllManufacturerInfo');
