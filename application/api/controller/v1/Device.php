@@ -17,6 +17,7 @@ use app\api\model\DeviceStatus as DeviceStatusModel;
 use app\api\validate\DeviceRegisterDelete;
 use app\api\validate\DeviceRegisterFilter;
 use app\api\validate\DeviceRegisterUpdate;
+use app\api\validate\DeviceStatusFilter;
 use app\api\validate\DeviceStatusInfoUpdate;
 
 class Device
@@ -64,6 +65,12 @@ class Device
     public function putDeviceStatusInfo(){
         (new DeviceStatusInfoUpdate())->goCheck();
         $device = (new DeviceStatus())->putDeviceStatusInfo();
+        return $device;
+    }
+    // 过滤设备状态信息
+    public function getFilterDeviceStatusInfo(){
+        (new DeviceStatusFilter())->goCheck();
+        $device = (new DeviceStatus())->getFilterDeviceStatusInfo();
         return $device;
     }
 }

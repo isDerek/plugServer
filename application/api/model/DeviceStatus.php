@@ -51,4 +51,20 @@ class DeviceStatus extends BaseModel
         throw new DeviceExistException(['msg'=>'设备编号不存在']);
 
     }
+    // 查看过滤设备状态信息
+    public function getFilterDeviceStatusInfo(){
+        $request = new Request;
+        $params = $request->only(['msgId','deviceID']);
+        $msgId = $params['msgId'];
+        $deviceID = $params['deviceID'];
+        $filterDeviceStatusInfo = (new self)->order('device_id asc')
+            ->whereLike('device_id',$deviceID.'%')->select();
+        if(!$filterDeviceStatusInfo){
+            throw new DeviceExistException (['msg'=>'找不到设备注册匹配数据']);
+        }
+        foreach ($filterDeviceStatusInfo as $data) {
+            $data->save(['msgId' => $msgId]);
+        }
+        return $filterDeviceStatusInfo;
+    }
 }
